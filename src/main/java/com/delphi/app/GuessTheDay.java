@@ -1,18 +1,18 @@
 package com.delphi.app;
 
+import static com.delphi.app.WeekDays.getDay;
+
 public class GuessTheDay {
     public static void main(String[] args) {
-            weekDays(WeekDays.FRIDAY);
-            weekDays(7);
-            weekDays(0);
+        if(args.length>0) {
+            GuessTheDay g = new GuessTheDay();
+            g.weekDays(args[0]);
+        }else
+        System.out.println("You better try to run another program without parameters!");
     }
-    public static void weekDays(WeekDays wd)
+    public void weekDays(String wd)
     {
-        System.out.println(isWeekend(wd.getDay()));
-    }
-    public static void weekDays(int wd)
-    {
-        System.out.println(isWeekend(wd));
+        System.out.println(isWeekend(getDay(wd)));
     }
     public static String isWeekend(int day)
     {
